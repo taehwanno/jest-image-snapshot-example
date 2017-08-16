@@ -1,0 +1,27 @@
+{
+  "name": "jest-image-snapshot-example",
+  "version": "1.0.0",
+  "main": "server.js",
+  "description": "Jest Image Snapshot Example",
+  "license": "MIT",
+  "author": "Taehwan, No <taehwanno.dev@gmail.com> (https://github.com/taehwanno)",
+  "homepage": "https://github.com/taehwanno/jest-image-snapshot-example",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "jest": "^20.0.4",
+    "jest-image-snapshot": "^1.0.0",
+    "puppeteer": "^0.9.0"
+  }
+}
