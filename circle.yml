@@ -1,0 +1,19 @@
+machine:
+  node:
+    version: 8.4.0
+  timezone:
+    Asia/Seoul
+
+dependencies:
+  override:
+    - yarn install
+  cache_directories:
+    - ~/.yarn
+    - ~/.cache/yarn
+
+test:
+  pre:
+    - yarn start:
+      background: true
+  override:
+    - yarn test -- --maxWorkers=2
