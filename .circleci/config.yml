@@ -32,7 +32,5 @@ jobs:
             sleep 2
             yarn test -- --maxWorkers=2
       - store_artifacts:
-          path: test-results
-          prefix: tests
-      - store_test_results:
-          path: test-results
+          path: test/__image_snapshots__/__diff_output__
+          destination: image_snapshot_diff
