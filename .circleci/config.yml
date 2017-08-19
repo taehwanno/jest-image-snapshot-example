@@ -1,0 +1,35 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/jest-image-snapshot-example
+    docker:
+      - image: circleci/node:8.4.0
+    environment:
+      TZ: "/usr/share/zoneinfo/Asia/Seoul"
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependency
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+            - ~/.yarn-cache
+      - run:
+          name: Start Server
+          command: yarn start
+          background: true
+      - run:
+          name: Test
+          command: |
+            sleep 2
+            yarn test -- --maxWorkers=2
+      - store_artifacts:
+          path: test-results
+          prefix: tests
+      - store_test_results:
+          path: test-results
