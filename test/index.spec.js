@@ -1,7 +1,4 @@
 import puppeteer from 'puppeteer';
-import { toMatchImageSnapshot } from 'jest-image-snapshot';
-
-expect.extend({ toMatchImageSnapshot });
 
 it('Visual regression test', async () => {
   const browser = await puppeteer.launch();
