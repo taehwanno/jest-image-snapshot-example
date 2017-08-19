@@ -1,8 +1,6 @@
 import puppeteer from 'puppeteer';
 import { toMatchImageSnapshot } from 'jest-image-snapshot';
 
-import IMAGE_SNAPSHOT_CONFIG from 'constants/image-diff';
-
 expect.extend({ toMatchImageSnapshot });
 
 it('Visual regression test', async () => {
@@ -12,5 +10,5 @@ it('Visual regression test', async () => {
   const screenshot = await page.screenshot();
   browser.close();
 
-  expect(screenshot).toMatchImageSnapshot(IMAGE_SNAPSHOT_CONFIG);
+  expect(screenshot).toMatchImageSnapshot();
 });
