@@ -1,6 +1,6 @@
 export default {
   customDiffConfig: {
     thresholdType: 'pixel',
-    threshold: 1,
+    threshold: 5,
   },
 };
