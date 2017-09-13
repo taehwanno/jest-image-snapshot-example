@@ -4,7 +4,7 @@ Jest Image Snapshot Example with [jest-image-snapshot](https://github.com/americ
 
 # Prerequisite
 
-- node >= `v7.10.0`
+- node >= `v7.6.0`
 - jest >= `v20.0.0`
 - yarn
 
